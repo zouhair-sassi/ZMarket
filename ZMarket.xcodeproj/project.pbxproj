@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C01958ADAA56AF53B27728E /* Pods_ZMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */; };
 		EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */; };
 		EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */; };
 		EC4BEFE825110C5A00CCB8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE725110C5A00CCB8B9 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMarket.debug.xcconfig"; path = "Target Support Files/Pods-ZMarket/Pods-ZMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMarket.release.xcconfig"; path = "Target Support Files/Pods-ZMarket/Pods-ZMarket.release.xcconfig"; sourceTree = "<group>"; };
 		EC4BEFE025110C5A00CCB8B9 /* ZMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C01958ADAA56AF53B27728E /* Pods_ZMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EBA7442B5AD98FC3B3AA9C3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */,
+				A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EC4BEFD725110C5A00CCB8B9 = {
 			isa = PBXGroup;
 			children = (
 				EC4BEFE225110C5A00CCB8B9 /* ZMarket */,
 				EC4BEFE125110C5A00CCB8B9 /* Products */,
+				EBA7442B5AD98FC3B3AA9C3F /* Pods */,
+				F80F6A19A88A1DC0A2459118 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = ZMarket;
 			sourceTree = "<group>";
 		};
+		F80F6A19A88A1DC0A2459118 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC4BEFF425110C5C00CCB8B9 /* Build configuration list for PBXNativeTarget "ZMarket" */;
 			buildPhases = (
+				65771414317F01AF7EBFB48F /* [CP] Check Pods Manifest.lock */,
 				EC4BEFDC25110C5A00CCB8B9 /* Sources */,
 				EC4BEFDD25110C5A00CCB8B9 /* Frameworks */,
 				EC4BEFDE25110C5A00CCB8B9 /* Resources */,
+				CD0105D2BE53056D2A3104E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65771414317F01AF7EBFB48F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD0105D2BE53056D2A3104E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZMarket/Pods-ZMarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZMarket/Pods-ZMarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZMarket/Pods-ZMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC4BEFDC25110C5A00CCB8B9 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		EC4BEFF525110C5C00CCB8B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		EC4BEFF625110C5C00CCB8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
