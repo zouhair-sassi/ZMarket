@@ -15,6 +15,10 @@
 		EC4BEFF025110C5C00CCB8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */; };
 		ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */; };
 		ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */; };
+		ECC09359251A8E30002830A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECC09358251A8E30002830A9 /* GoogleService-Info.plist */; };
+		ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */; };
+		ECC09364251A927B002830A9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09363251A927B002830A9 /* Category.swift */; };
+		ECC09387251A9477002830A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09386251A9477002830A9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		EC4BEFF125110C5C00CCB8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECC09358251A8E30002830A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
+		ECC09363251A927B002830A9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		ECC09386251A9477002830A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,14 +84,66 @@
 			children = (
 				EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */,
 				EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */,
-				ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */,
-				ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */,
 				EC4BEFE925110C5A00CCB8B9 /* Main.storyboard */,
 				EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */,
 				EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */,
-				EC4BEFF125110C5C00CCB8B9 /* Info.plist */,
+				ECC09366251A9285002830A9 /* Model */,
+				ECC0935F251A91EE002830A9 /* View Controllers */,
+				ECC09360251A920E002830A9 /* Views */,
+				ECC0935E251A91E1002830A9 /* Helpers */,
 			);
 			path = ZMarket;
+			sourceTree = "<group>";
+		};
+		ECC0935E251A91E1002830A9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */,
+				ECC09386251A9477002830A9 /* Constants.swift */,
+				ECC09362251A9240002830A9 /* Supporting Files */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ECC0935F251A91EE002830A9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		ECC09360251A920E002830A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECC09361251A9215002830A9 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECC09361251A9215002830A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ECC09362251A9240002830A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC4BEFF125110C5C00CCB8B9 /* Info.plist */,
+				ECC09358251A8E30002830A9 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECC09366251A9285002830A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECC09363251A927B002830A9 /* Category.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F80F6A19A88A1DC0A2459118 /* Frameworks */ = {
@@ -155,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4BEFF025110C5C00CCB8B9 /* LaunchScreen.storyboard in Resources */,
+				ECC09359251A8E30002830A9 /* GoogleService-Info.plist in Resources */,
 				EC4BEFED25110C5C00CCB8B9 /* Assets.xcassets in Resources */,
 				EC4BEFEB25110C5A00CCB8B9 /* Main.storyboard in Resources */,
 			);
@@ -211,8 +272,11 @@
 			files = (
 				ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */,
 				EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */,
+				ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */,
 				EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */,
+				ECC09387251A9477002830A9 /* Constants.swift in Sources */,
 				ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */,
+				ECC09364251A927B002830A9 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4T3WLUFG7;
-				INFOPLIST_FILE = ZMarket/Info.plist;
+				INFOPLIST_FILE = "ZMarket/Helpers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4T3WLUFG7;
-				INFOPLIST_FILE = ZMarket/Info.plist;
+				INFOPLIST_FILE = "ZMarket/Helpers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
