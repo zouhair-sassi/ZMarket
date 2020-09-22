@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7C01958ADAA56AF53B27728E /* Pods_ZMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */; };
 		EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */; };
 		EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */; };
-		EC4BEFE825110C5A00CCB8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE725110C5A00CCB8B9 /* ViewController.swift */; };
 		EC4BEFEB25110C5A00CCB8B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFE925110C5A00CCB8B9 /* Main.storyboard */; };
 		EC4BEFED25110C5C00CCB8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */; };
 		EC4BEFF025110C5C00CCB8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */; };
+		ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */; };
+		ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +24,12 @@
 		EC4BEFE025110C5A00CCB8B9 /* ZMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC4BEFE725110C5A00CCB8B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC4BEFEA25110C5A00CCB8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4BEFEF25110C5C00CCB8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4BEFF125110C5C00CCB8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */,
 				A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,7 +76,8 @@
 			children = (
 				EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */,
 				EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */,
-				EC4BEFE725110C5A00CCB8B9 /* ViewController.swift */,
+				ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */,
+				ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */,
 				EC4BEFE925110C5A00CCB8B9 /* Main.storyboard */,
 				EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */,
 				EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */,
@@ -207,9 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4BEFE825110C5A00CCB8B9 /* ViewController.swift in Sources */,
+				ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */,
 				EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */,
 				EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */,
+				ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket.market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket.market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
