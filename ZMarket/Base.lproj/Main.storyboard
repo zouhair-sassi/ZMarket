@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vl9-Ud-rZB">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vl9-Ud-rZB">
                             <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -49,10 +49,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Un8-ex-WmS">
-                                            <rect key="frame" x="22.5" y="0.0" width="75" height="75"/>
+                                            <rect key="frame" x="22.5" y="0.0" width="65" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="WZq-rH-fBT"/>
-                                                <constraint firstAttribute="width" constant="75" id="xjg-Yn-Ahm"/>
+                                                <constraint firstAttribute="height" constant="65" id="WZq-rH-fBT"/>
+                                                <constraint firstAttribute="width" constant="65" id="xjg-Yn-Ahm"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgo-Jn-Q78">
@@ -60,7 +60,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="0PR-Ux-5DD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -70,10 +70,16 @@
                                         <constraint firstAttribute="trailing" secondItem="xgo-Jn-Q78" secondAttribute="trailing" id="EdG-fu-OHp"/>
                                         <constraint firstAttribute="bottom" secondItem="xgo-Jn-Q78" secondAttribute="bottom" id="UMb-WA-Q7a"/>
                                         <constraint firstItem="Un8-ex-WmS" firstAttribute="top" secondItem="MA1-Eu-IU4" secondAttribute="top" id="VE9-aS-jmq"/>
-                                        <constraint firstItem="Un8-ex-WmS" firstAttribute="centerX" secondItem="MA1-Eu-IU4" secondAttribute="centerX" id="f8T-vB-5e5"/>
+                                        <constraint firstItem="xgo-Jn-Q78" firstAttribute="leading" secondItem="MA1-Eu-IU4" secondAttribute="leading" id="Vxx-tF-Xbl"/>
+                                        <constraint firstAttribute="trailing" secondItem="xgo-Jn-Q78" secondAttribute="trailing" id="esG-tY-yv9"/>
+                                        <constraint firstItem="Un8-ex-WmS" firstAttribute="centerX" secondItem="MA1-Eu-IU4" secondAttribute="centerX" constant="-5" id="f8T-vB-5e5"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="120" height="120"/>
+                                <connections>
+                                    <outlet property="imageView" destination="Un8-ex-WmS" id="vfh-zJ-rNu"/>
+                                    <outlet property="nameLabel" destination="xgo-Jn-Q78" id="LLL-Rt-Tdf"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
