@@ -43,11 +43,25 @@ class CategoryCollectionViewController: UICollectionViewController {
         return cell
     }
 
+    //MARK: UICollectionView Delegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "categoryToItemsSegue", sender: categoryArray[indexPath.row])
+    }
+
     //MARK: Download categories
     private func loadCategories() {
         downloadCategoriesFromFirebase { (allCategories) in
             self.categoryArray = allCategories
             self.collectionView.reloadData()
+        }
+    }
+
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "categoryToItemsSegue" {
+            let vc = segue.destination as! ItemsTableViewController
+            vc.category = sender as! Category
+            
         }
     }
 }

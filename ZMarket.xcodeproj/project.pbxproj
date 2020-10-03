@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		7C01958ADAA56AF53B27728E /* Pods_ZMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */; };
+		EC0BB52225289C240076FC86 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0BB52125289C240076FC86 /* Richability.swift */; };
+		EC0BB52525289C8A0076FC86 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0BB52425289C8A0076FC86 /* Downloader.swift */; };
+		EC0BB5622528B4480076FC86 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0BB5612528B4480076FC86 /* ItemTableViewCell.swift */; };
 		EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */; };
 		EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */; };
 		EC4BEFEB25110C5A00CCB8B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFE925110C5A00CCB8B9 /* Main.storyboard */; };
 		EC4BEFED25110C5C00CCB8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */; };
 		EC4BEFF025110C5C00CCB8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */; };
+		EC4CF3242523555D00580DEF /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF3232523555D00580DEF /* ItemsTableViewController.swift */; };
+		EC4CF344252357A200580DEF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF343252357A200580DEF /* Item.swift */; };
+		EC4CF348252381B000580DEF /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF347252381B000580DEF /* AddItemViewController.swift */; };
 		ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */; };
 		ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */; };
 		ECC09359251A8E30002830A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECC09358251A8E30002830A9 /* GoogleService-Info.plist */; };
@@ -25,6 +31,9 @@
 		36DAF436ADCBC05776933B8D /* Pods_ZMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMarket.debug.xcconfig"; path = "Target Support Files/Pods-ZMarket/Pods-ZMarket.debug.xcconfig"; sourceTree = "<group>"; };
 		A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZMarket.release.xcconfig"; path = "Target Support Files/Pods-ZMarket/Pods-ZMarket.release.xcconfig"; sourceTree = "<group>"; };
+		EC0BB52125289C240076FC86 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
+		EC0BB52425289C8A0076FC86 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		EC0BB5612528B4480076FC86 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		EC4BEFE025110C5A00CCB8B9 /* ZMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +41,9 @@
 		EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4BEFEF25110C5C00CCB8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4BEFF125110C5C00CCB8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4CF3232523555D00580DEF /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		EC4CF343252357A200580DEF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EC4CF347252381B000580DEF /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECC09358251A8E30002830A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -100,6 +112,8 @@
 			children = (
 				ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */,
 				ECC09386251A9477002830A9 /* Constants.swift */,
+				EC0BB52125289C240076FC86 /* Richability.swift */,
+				EC0BB52425289C8A0076FC86 /* Downloader.swift */,
 				ECC09362251A9240002830A9 /* Supporting Files */,
 			);
 			path = Helpers;
@@ -109,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				ECC09334251A8B0E002830A9 /* CategoryCollectionViewController.swift */,
+				EC4CF3232523555D00580DEF /* ItemsTableViewController.swift */,
+				EC4CF347252381B000580DEF /* AddItemViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -125,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC09337251A8B93002830A9 /* CategoryCollectionViewCell.swift */,
+				EC0BB5612528B4480076FC86 /* ItemTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -142,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC09363251A927B002830A9 /* Category.swift */,
+				EC4CF343252357A200580DEF /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,10 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */,
+				EC4CF344252357A200580DEF /* Item.swift in Sources */,
+				EC0BB52525289C8A0076FC86 /* Downloader.swift in Sources */,
 				EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */,
+				EC4CF3242523555D00580DEF /* ItemsTableViewController.swift in Sources */,
 				ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */,
+				EC0BB5622528B4480076FC86 /* ItemTableViewCell.swift in Sources */,
+				EC4CF348252381B000580DEF /* AddItemViewController.swift in Sources */,
 				EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */,
 				ECC09387251A9477002830A9 /* Constants.swift in Sources */,
+				EC0BB52225289C240076FC86 /* Richability.swift in Sources */,
 				ECC09335251A8B0E002830A9 /* CategoryCollectionViewController.swift in Sources */,
 				ECC09364251A927B002830A9 /* Category.swift in Sources */,
 			);

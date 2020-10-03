@@ -90,5 +90,4 @@ func createCategorySet() {
     for category in arrayOfCategories {
         saveCategoryToFirebase(category)
     }
-
 }
