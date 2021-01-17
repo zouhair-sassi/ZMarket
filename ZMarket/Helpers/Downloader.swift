@@ -64,3 +64,27 @@ func saveImageInFirebase(imageData: Data, fileName: String, completion: @escapin
         }
     })
 }
+
+
+func downloadImages(imageUrls: [String], completion: @escaping (_ images: [UIImage?]) -> Void) {
+    var imageArray: [UIImage] = []
+    var downloadCounter = 0
+    for link in imageUrls {
+        let url = NSURL(string: link)
+        let downloadQueue = DispatchQueue(label: "imageDownloadQueue")
+        downloadQueue.async {
+            downloadCounter += 1
+            let data = NSData(contentsOf: url! as URL)
+            if data != nil {
+                imageArray.append(UIImage(data: data! as Data)!)
+                if downloadCounter == imageArray.count {
+                    DispatchQueue.main.async {
+                        completion(imageArray)
+                    }
+                }
+            } else {
+                print("Couldnt download image")
+            }
+        }
+    }
+}

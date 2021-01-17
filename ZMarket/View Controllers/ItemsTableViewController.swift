@@ -28,8 +28,7 @@ class ItemsTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table view data source
-
+    //MARK: - TableView data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
@@ -41,13 +40,24 @@ class ItemsTableViewController: UITableViewController {
         return cell
     }
 
-    // MARK: - Navigation
+    //MARK: - TableView delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showItemView(itemArray[indexPath.row])
+    }
+
+    //MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemToAddItemSeg" {
             let vc = segue.destination as! AddItemViewController
             vc.category = category!
         }
+    }
+    private func showItemView(_ item: Item) {
+        let itemVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+        itemVC.item = item
+        self.navigationController?.pushViewController(itemVC, animated: true)
     }
 
     //MARK: Load Items
