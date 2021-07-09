@@ -32,3 +32,12 @@ public let KIMAGELINKS = "imageLinks"
 public let KOWNERID = "ownerId"
 public let KITEMIDS = "itemIds"
 
+//User
+public let KEMAIL = "email"
+public let KFIRSTNAME = "firstName"
+public let KLASTNAME = "lastName"
+public let KFULLNAME = "fullName"
+public let KCURRENTUSER = "currentUser"
+public let KFULLADDRESS = "fullAddress"
+public let KONBOARD = "onBoard"
+public let KPURCHASEDITEMSIDS = "purchasedItemIds"
