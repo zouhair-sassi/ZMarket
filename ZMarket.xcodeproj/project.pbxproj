@@ -25,6 +25,7 @@
 		EC5306BD26A1A335003053B7 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306BC26A1A335003053B7 /* FinishRegistrationViewController.swift */; };
 		EC5306E026A1CABC003053B7 /* EditProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */; };
 		EC5306E326A1D987003053B7 /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */; };
+		EC53EC6A26A98899004F3C51 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC53EC6926A98899004F3C51 /* Keys.swift */; };
 		EC630BBD25B35539003371EC /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBC25B35539003371EC /* Basket.swift */; };
 		EC630BC025B39CBE003371EC /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBF25B39CBE003371EC /* BasketViewController.swift */; };
 		EC70393A25B4B0AB007B156A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70393925B4B0AB007B156A /* WelcomeViewController.swift */; };
@@ -61,6 +62,8 @@
 		EC5306BC26A1A335003053B7 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilViewController.swift; sourceTree = "<group>"; };
 		EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
+		EC53EC4626A9850E004F3C51 /* ZMarket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZMarket-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC53EC6926A98899004F3C51 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EC630BBC25B35539003371EC /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		EC630BBF25B39CBE003371EC /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		EC70393925B4B0AB007B156A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				EC4BEFE325110C5A00CCB8B9 /* AppDelegate.swift */,
+				EC53EC6926A98899004F3C51 /* Keys.swift */,
 				EC4BEFE525110C5A00CCB8B9 /* SceneDelegate.swift */,
+				EC53EC4626A9850E004F3C51 /* ZMarket-Bridging-Header.h */,
 				EC4BEFE925110C5A00CCB8B9 /* Main.storyboard */,
 				EC4BEFEC25110C5C00CCB8B9 /* Assets.xcassets */,
 				EC4BEFEE25110C5C00CCB8B9 /* LaunchScreen.storyboard */,
@@ -247,6 +252,7 @@
 				TargetAttributes = {
 					EC4BEFDF25110C5A00CCB8B9 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -353,6 +359,7 @@
 				ECC09364251A927B002830A9 /* Category.swift in Sources */,
 				EC70393D25B4BC8B007B156A /* MUser.swift in Sources */,
 				EC70393A25B4B0AB007B156A /* WelcomeViewController.swift in Sources */,
+				EC53EC6A26A98899004F3C51 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +504,7 @@
 			baseConfigurationReference = 6CEB1D3244CC0799DC3D1361 /* Pods-ZMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4T3WLUFG7;
 				INFOPLIST_FILE = "ZMarket/Helpers/Supporting Files/Info.plist";
@@ -506,6 +514,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket.market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZMarket/ZMarket-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -516,6 +526,7 @@
 			baseConfigurationReference = A550BB3D19E35320E4A047A5 /* Pods-ZMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4T3WLUFG7;
 				INFOPLIST_FILE = "ZMarket/Helpers/Supporting Files/Info.plist";
@@ -525,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZMarket.market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZMarket/ZMarket-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
