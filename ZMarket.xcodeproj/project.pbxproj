@@ -22,6 +22,9 @@
 		EC4CF3242523555D00580DEF /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF3232523555D00580DEF /* ItemsTableViewController.swift */; };
 		EC4CF344252357A200580DEF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF343252357A200580DEF /* Item.swift */; };
 		EC4CF348252381B000580DEF /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4CF347252381B000580DEF /* AddItemViewController.swift */; };
+		EC5306BD26A1A335003053B7 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306BC26A1A335003053B7 /* FinishRegistrationViewController.swift */; };
+		EC5306E026A1CABC003053B7 /* EditProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */; };
+		EC5306E326A1D987003053B7 /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */; };
 		EC630BBD25B35539003371EC /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBC25B35539003371EC /* Basket.swift */; };
 		EC630BC025B39CBE003371EC /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBF25B39CBE003371EC /* BasketViewController.swift */; };
 		EC70393A25B4B0AB007B156A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70393925B4B0AB007B156A /* WelcomeViewController.swift */; };
@@ -32,6 +35,7 @@
 		ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */; };
 		ECC09364251A927B002830A9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09363251A927B002830A9 /* Category.swift */; };
 		ECC09387251A9477002830A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC09386251A9477002830A9 /* Constants.swift */; };
+		ECC2EABA2698856200B70F7C /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC2EAB92698856200B70F7C /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		EC4CF3232523555D00580DEF /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		EC4CF343252357A200580DEF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EC4CF347252381B000580DEF /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		EC5306BC26A1A335003053B7 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilViewController.swift; sourceTree = "<group>"; };
+		EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
 		EC630BBC25B35539003371EC /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		EC630BBF25B39CBE003371EC /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		EC70393925B4B0AB007B156A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +71,7 @@
 		ECC0935B251A8FBD002830A9 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		ECC09363251A927B002830A9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		ECC09386251A9477002830A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ECC2EAB92698856200B70F7C /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,15 @@
 			path = ZMarket;
 			sourceTree = "<group>";
 		};
+		EC5306BF26A1A342003053B7 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				EC70393925B4B0AB007B156A /* WelcomeViewController.swift */,
+				EC5306BC26A1A335003053B7 /* FinishRegistrationViewController.swift */,
+			);
+			path = "Login View";
+			sourceTree = "<group>";
+		};
 		ECC0935E251A91E1002830A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +159,10 @@
 				EC4CF347252381B000580DEF /* AddItemViewController.swift */,
 				EC2D2FB0256D29DF00E2BEB1 /* ItemViewController.swift */,
 				EC630BBF25B39CBE003371EC /* BasketViewController.swift */,
-				EC70393925B4B0AB007B156A /* WelcomeViewController.swift */,
+				EC5306BF26A1A342003053B7 /* Login View */,
+				ECC2EAB92698856200B70F7C /* ProfileTableViewController.swift */,
+				EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */,
+				EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -309,9 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC2EABA2698856200B70F7C /* ProfileTableViewController.swift in Sources */,
 				EC630BC025B39CBE003371EC /* BasketViewController.swift in Sources */,
 				ECC09338251A8B93002830A9 /* CategoryCollectionViewCell.swift in Sources */,
 				EC4CF344252357A200580DEF /* Item.swift in Sources */,
+				EC5306BD26A1A335003053B7 /* FinishRegistrationViewController.swift in Sources */,
 				EC2D2FB4256D528000E2BEB1 /* ImageCollectionViewCell.swift in Sources */,
 				EC2D2FB1256D29DF00E2BEB1 /* ItemViewController.swift in Sources */,
 				EC0BB52525289C8A0076FC86 /* Downloader.swift in Sources */,
@@ -319,9 +341,11 @@
 				EC4CF3242523555D00580DEF /* ItemsTableViewController.swift in Sources */,
 				ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */,
 				EC630BBD25B35539003371EC /* Basket.swift in Sources */,
+				EC5306E326A1D987003053B7 /* PurchasedHistoryTableViewController.swift in Sources */,
 				EC0BB5622528B4480076FC86 /* ItemTableViewCell.swift in Sources */,
 				EC4CF348252381B000580DEF /* AddItemViewController.swift in Sources */,
 				EC4BEFE625110C5A00CCB8B9 /* SceneDelegate.swift in Sources */,
+				EC5306E026A1CABC003053B7 /* EditProfilViewController.swift in Sources */,
 				EC0BB59F2528C1D40076FC86 /* HelperFunction.swift in Sources */,
 				ECC09387251A9477002830A9 /* Constants.swift in Sources */,
 				EC0BB52225289C240076FC86 /* Richability.swift in Sources */,

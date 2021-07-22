@@ -66,22 +66,26 @@ class ItemViewController: UIViewController {
 
     @objc func addToBasketButtonPressed() {
         //TODO: check if user is logged in or show login view
-        /*downloadBasketFromFirestore("123") { (basket) in
-            if (basket == nil) {
-                self.createNewBasket()
-            } else {
-                basket!.itemsIds.append(self.item.id)
-                self.updateBasket(basket: basket!, withValues: [KITEMIDS : basket?.itemsIds])
+        if (MUser.currentUser() != nil) {
+            downloadBasketFromFirestore(MUser.currentID()) { (basket) in
+                if (basket == nil) {
+                    self.createNewBasket()
+                } else {
+                    basket!.itemsIds.append(self.item.id)
+                    self.updateBasket(basket: basket!, withValues: [KITEMIDS : basket?.itemsIds])
+                }
             }
-        }*/
-        showLoginView()
+        } else {
+            showLoginView()
+        }
+
     }
 
     //MARK: Add to basket
     private func createNewBasket() {
         let newBasket = Basket()
         newBasket.id = UUID().uuidString
-        newBasket.owerId = "123"
+        newBasket.owerId = MUser.currentID()
         newBasket.itemsIds = [self.item.id]
         saveBasketTOFirestore(newBasket)
 
