@@ -42,6 +42,21 @@ class BasketViewController: UIViewController {
         }
     }
 
+    //MARK: - IBActions
+
+    @IBAction func checkOutButtonPressed(_ sender: Any) {
+        if (MUser.currentUser()!.onBoard) {
+            self.tempFunction()
+            self.addItemsToPurchaseHistory(self.purchasedItemIds)
+            self.emptyTheBasket()
+        } else {
+            self.hud.textLabel.text = "Please complete your profile"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
+        }
+    }
+
     //MARK: - Download basket
     private func loadBasketFromFirestore() {
         downloadBasketFromFirestore(MUser.currentID()) { (basket) in
@@ -61,6 +76,13 @@ class BasketViewController: UIViewController {
     }
 
     //MARK: - Helper functions
+
+    private func tempFunction() {
+        for item in allItems {
+            purchasedItemIds.append(item.id)
+        }
+    }
+
     private func updateTotalLabels(_ isEmpty: Bool) {
         if (isEmpty) {
             totalItemsLabel.text = "0"
@@ -78,6 +100,31 @@ class BasketViewController: UIViewController {
             totalPrice += item.price
         }
         return "Total price: " + convertToCurrency(totalPrice)
+    }
+
+    private func emptyTheBasket() {
+        purchasedItemIds.removeAll()
+        allItems.removeAll()
+        self.tableView.reloadData()
+        basket!.itemsIds = []
+        updateBasketInFirestore(basket!, withValues: [KITEMIDS : basket!.itemsIds]) { (error) in
+            if (error != nil) {
+                print("Error updateing basket", error?.localizedDescription)
+            }
+            self.getBasketItems()
+        }
+    }
+
+    private func addItemsToPurchaseHistory(_ itemsIds: [String]) {
+        if (MUser.currentUser() != nil) {
+            let newItemIds = MUser.currentUser()!.purchasedItemIds + itemsIds
+            updateCurrentUserInFirestore(withValues: [KPURCHASEDITEMSIDS : newItemIds]) { (error) in
+                if (error != nil) {
+                    print("Error adding purchased items", error!.localizedDescription)
+                }
+            }
+
+        }
     }
 
     //MARK: - Navigation
@@ -113,11 +160,6 @@ class BasketViewController: UIViewController {
         }
     }
 
-    //MARK: - IBActions
-
-    @IBAction func checkOutButtonPressed(_ sender: Any) {
-
-    }
 }
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
