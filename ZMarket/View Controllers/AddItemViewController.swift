@@ -89,12 +89,14 @@ class AddItemViewController: UIViewController {
             uploadImages(images: itemImages, itemId: item.id) { (imageLikArray) in
                 item.imageLinks = imageLikArray
                 saveItemsToFirestore(item)
+                saveItemToAlgolia(item: item)
                 self.hideLoadingIndicator()
                 self.popTheView()
 
             }
         } else {
             saveItemsToFirestore(item)
+            saveItemToAlgolia(item: item)
             self.popTheView()
         }
     }
