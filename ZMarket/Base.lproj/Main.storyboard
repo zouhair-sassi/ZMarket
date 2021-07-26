@@ -716,6 +716,54 @@
             </objects>
             <point key="canvasLocation" x="3412" y="1728"/>
         </scene>
+        <!--Card Info View Controller-->
+        <scene sceneID="EJT-ww-nuK">
+            <objects>
+                <viewController storyboardIdentifier="cardinfoVC" id="t3v-nW-OMr" customClass="CardInfoViewController" customModule="ZMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cdL-Zj-8GY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e1-1P-Hm6">
+                                <rect key="frame" x="20" y="79" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Lbi-HW-vBy"/>
+                                    <constraint firstAttribute="height" constant="30" id="f84-DD-7uS"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="t3v-nW-OMr" eventType="touchUpInside" id="DgR-dK-sR8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyp-nZ-mhn">
+                                <rect key="frame" x="299" y="79" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Bx-aW-QOX"/>
+                                    <constraint firstAttribute="width" constant="95" id="pji-J7-3pG"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPresed:" destination="t3v-nW-OMr" eventType="touchUpInside" id="4R9-fW-8OT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N9L-v4-qKG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2e1-1P-Hm6" firstAttribute="leading" secondItem="N9L-v4-qKG" secondAttribute="leading" constant="20" id="3Gl-Lb-Twv"/>
+                            <constraint firstItem="2e1-1P-Hm6" firstAttribute="top" secondItem="N9L-v4-qKG" secondAttribute="top" constant="35" id="E7P-NM-dxQ"/>
+                            <constraint firstItem="N9L-v4-qKG" firstAttribute="trailing" secondItem="Kyp-nZ-mhn" secondAttribute="trailing" constant="20" id="Rhu-iD-xop"/>
+                            <constraint firstItem="Kyp-nZ-mhn" firstAttribute="top" secondItem="N9L-v4-qKG" secondAttribute="top" constant="35" id="SEy-Fw-6uq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButtonOutlet" destination="Kyp-nZ-mhn" id="zkK-8E-dhf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x77-BY-88B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5296" y="457"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="C42-lU-mZR">
             <objects>

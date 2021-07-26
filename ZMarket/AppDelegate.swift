@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        initializePayPal()
+        initializeStripe()
         return true
     }
 
@@ -37,8 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK: - PayPal Init
 
-    func initializePayPal() {
-        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction : paypalKey,
-                                                               PayPalEnvironmentSandbox : paypalSandboxCompte])
+    func initializeStripe() {
+        STPPaymentConfiguration.shared.publishableKey = Constats.publishableKey
+        StripeClient.shared.baseURLString = Constats.baseURLString
+        
     }
 }

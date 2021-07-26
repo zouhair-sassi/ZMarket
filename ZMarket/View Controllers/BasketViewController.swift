@@ -8,6 +8,7 @@
 
 import UIKit
 import JGProgressHUD
+import Stripe
 
 class BasketViewController: UIViewController {
 
@@ -23,15 +24,7 @@ class BasketViewController: UIViewController {
     var allItems: [Item] = []
     var purchasedItemIds : [String] = []
     let hud = JGProgressHUD(style: .dark)
-
-    var environment: String = PayPalEnvironmentNoNetwork {
-        willSet (newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnect(withEnvironment: newEnvironment)
-            }
-        }
-    }
-    var payPalConfig = PayPalConfiguration()
+    var totalPrice = 0
 
 
     //MARK: - View Lifecycle
@@ -39,7 +32,6 @@ class BasketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = footerView
-        self.setupPayPal()
 
     }
 
@@ -56,15 +48,9 @@ class BasketViewController: UIViewController {
 
     @IBAction func checkOutButtonPressed(_ sender: Any) {
         if (MUser.currentUser()!.onBoard) {
-            /*self.tempFunction()
-            self.addItemsToPurchaseHistory(self.purchasedItemIds)
-            self.emptyTheBasket()*/
-            self.payButtonPressed()
+            self.showPaymentOptions()
         } else {
-            self.hud.textLabel.text = "Please complete your profile"
-            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
-            self.hud.show(in: self.view)
-            self.hud.dismiss(afterDelay: 2.0)
+            self.showNotification(text: "Please complete your profile", isError: true)
         }
     }
 
@@ -171,43 +157,54 @@ class BasketViewController: UIViewController {
         }
     }
 
-    //MARK: - PayPal
+    private func finishPayment(_ token: STPToken) {
+        self.totalPrice = 0
+        for item in allItems {
+            purchasedItemIds.append(item.id)
+            self.totalPrice += Int(item.price)
+        }
 
-    private func setupPayPal() {
-        payPalConfig.acceptCreditCards = false
-        payPalConfig.merchantName = "ZMarket Dev Market"
-        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/us/webapps/mpp/ua/privacy-full")
-        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/us/webapps/mpp/ua/useragreement-full")
-
-        payPalConfig.languageOrLocale = Locale.preferredLanguages.first
-        payPalConfig.payPalShippingAddressOption = .both
+        self.totalPrice = self.totalPrice * 100
+        StripeClient.shared.createAndConfirmPayment(token, amount: self.totalPrice) { (error) in
+            if (error == nil) {
+                self.emptyTheBasket()
+                self.addItemsToPurchaseHistory(self.purchasedItemIds)
+                //Show notificcation
+                self.showNotification(text: "Payment Succ", isError: false)
+            } else {
+                self.showNotification(text: error!.localizedDescription, isError: true)
+            }
+        }
     }
 
-    private func payButtonPressed() {
-        var itemsToBuy: [PayPalItem] = []
-        for item in allItems {
-            let tempItem = PayPalItem(name: item.name, withQuantity: 1, withPrice: NSDecimalNumber(value: item.price), withCurrency: "USD", withSku: nil)
-            purchasedItemIds.append(item.id)
-            itemsToBuy.append(tempItem)
-        }
-
-        let subTotal = PayPalItem.totalPrice(forItems: itemsToBuy)
-        let shippingCost = NSDecimalNumber(string: "50.0")
-        let tax = NSDecimalNumber(string: "5.00")
-
-        let paymentDetails = PayPalPaymentDetails(subtotal: subTotal, withShipping: shippingCost, withTax: tax)
-
-        let total = subTotal.adding(shippingCost).adding(tax)
-        let payment = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "Payment to ZMarket", intent: .sale)
-        payment.items = itemsToBuy
-        payment.paymentDetails = paymentDetails
-
-        if (payment.processable) {
-            let paymentView = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-            self.present(paymentView!, animated: true, completion: nil)
+    private func showNotification(text: String, isError: Bool) {
+        if (isError) {
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
         } else {
-            print("Payment not processable")
+            self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
         }
+        self.hud.textLabel.text = text
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
+    }
+
+    private func showPaymentOptions() {
+        let alert = UIAlertController(title: "Payment Options",
+                                      message: "Chose prefered payment",
+                                      preferredStyle: .actionSheet)
+
+        let cardAction = UIAlertAction(title: "Pay with Card",
+                                       style: .default) { (action) in
+            //Show card number
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "cardinfoVC") as! CardInfoViewController
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cardAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -266,4 +263,15 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+}
+
+extension BasketViewController: CardInfoViewcontrollerDelegate {
+    func didClicDone(_ token: STPToken) {
+        self.finishPayment(token)
+    }
+
+    func didClickCancel() {
+        self.showNotification(text: "Payment Canceled", isError: true)
+    }
+
 }

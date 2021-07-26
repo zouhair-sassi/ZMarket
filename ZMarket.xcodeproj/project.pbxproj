@@ -28,6 +28,8 @@
 		EC53EC6A26A98899004F3C51 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC53EC6926A98899004F3C51 /* Keys.swift */; };
 		EC53EC8A26A9B99B004F3C51 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC53EC8926A9B99B004F3C51 /* SearchViewController.swift */; };
 		EC53EC8D26AAC262004F3C51 /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC53EC8C26AAC262004F3C51 /* AlgoliaService.swift */; };
+		EC53ECB226AAF9AF004F3C51 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC53ECB126AAF9AF004F3C51 /* StripeClient.swift */; };
+		EC6013C026AB08F5009E5C37 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6013BF26AB08F5009E5C37 /* CardInfoViewController.swift */; };
 		EC630BBD25B35539003371EC /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBC25B35539003371EC /* Basket.swift */; };
 		EC630BC025B39CBE003371EC /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC630BBF25B39CBE003371EC /* BasketViewController.swift */; };
 		EC70393A25B4B0AB007B156A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70393925B4B0AB007B156A /* WelcomeViewController.swift */; };
@@ -68,6 +70,8 @@
 		EC53EC6926A98899004F3C51 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EC53EC8926A9B99B004F3C51 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EC53EC8C26AAC262004F3C51 /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
+		EC53ECB126AAF9AF004F3C51 /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
+		EC6013BF26AB08F5009E5C37 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		EC630BBC25B35539003371EC /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		EC630BBF25B39CBE003371EC /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		EC70393925B4B0AB007B156A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				ECC2EAB92698856200B70F7C /* ProfileTableViewController.swift */,
 				EC5306DF26A1CABC003053B7 /* EditProfilViewController.swift */,
 				EC5306E226A1D987003053B7 /* PurchasedHistoryTableViewController.swift */,
+				EC6013BF26AB08F5009E5C37 /* CardInfoViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				EC630BBC25B35539003371EC /* Basket.swift */,
 				EC70393C25B4BC8B007B156A /* MUser.swift */,
 				EC53EC8C26AAC262004F3C51 /* AlgoliaService.swift */,
+				EC53ECB126AAF9AF004F3C51 /* StripeClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				EC0BB52525289C8A0076FC86 /* Downloader.swift in Sources */,
 				EC53EC8A26A9B99B004F3C51 /* SearchViewController.swift in Sources */,
 				EC4BEFE425110C5A00CCB8B9 /* AppDelegate.swift in Sources */,
+				EC53ECB226AAF9AF004F3C51 /* StripeClient.swift in Sources */,
 				EC4CF3242523555D00580DEF /* ItemsTableViewController.swift in Sources */,
 				ECC0935C251A8FBD002830A9 /* FirebaseCollectionReference.swift in Sources */,
 				EC630BBD25B35539003371EC /* Basket.swift in Sources */,
@@ -368,6 +375,7 @@
 				EC70393D25B4BC8B007B156A /* MUser.swift in Sources */,
 				EC70393A25B4B0AB007B156A /* WelcomeViewController.swift in Sources */,
 				EC53EC6A26A98899004F3C51 /* Keys.swift in Sources */,
+				EC6013C026AB08F5009E5C37 /* CardInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
